@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button'
 
 const Hero = () => {
     return (
-        <div className=' grid grid-cols-12 h-full min-w-full '>
+        <div className=' grid grid-cols-12 h-full min-w-full pt-7 pb-17'>
 
             {/* left side */}
             <div className="h-full col-span-5 flex flex-col pt-5 px-12">
@@ -24,7 +24,7 @@ const Hero = () => {
 
 
                 <p className='overflow-x-hidden w-full my-5 text-gray-600 text-lg'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eius error reprehenderit cum porro, tenetur, nisi reiciendis harum nostrum explicabo corporis minima in, sequi rerum eos suscipit dolores consequatur itaque.
+                   Instantly generate personalized courses with AI. Whether you're learning to code, design, or write — SkillForge creates chapter-wise lessons, flashcards, and quizzes tailored just for you.
                 </p>
 
                 <div className='my-1'>
