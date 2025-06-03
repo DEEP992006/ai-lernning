@@ -1,0 +1,49 @@
+import { MoveRightIcon, Sparkle } from 'lucide-react'
+import React from 'react'
+import { Button } from '../components/ui/button'
+
+const Hero = () => {
+    return (
+        <div className=' grid grid-cols-12 h-full min-w-full '>
+
+            {/* left side */}
+            <div className="h-full col-span-5 flex flex-col pt-5 px-12">
+                <div className='flex  items-center space-x-2 rounded-xl bg-blue-200 w-fit px-3 py-1 text-blue-600'>
+                    <Sparkle size={15} />
+                    <p> Ai Powered Platform</p>
+                </div>
+
+
+                <p className='text-7xl font-bold mt-9 leading-normal'>
+                    Master skill at
+                </p>
+
+                <h1 className="text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Wrap Speed
+                </h1>
+
+
+                <p className='overflow-x-hidden w-full my-5 text-gray-600 text-lg'>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eius error reprehenderit cum porro, tenetur, nisi reiciendis harum nostrum explicabo corporis minima in, sequi rerum eos suscipit dolores consequatur itaque.
+                </p>
+
+                <div className='my-1'>
+                    <button className='bg-gradient-to-r from-blue-600 to bg-purple-600 text-white rounded-xl text-lg px-5 py-2 flex items-center gap-2 '>
+                        Start Lerning Free
+                        <MoveRightIcon />
+                    </button>
+                </div>
+
+
+
+            </div>
+            {/* right side */}
+            <div className="col-span-7 flex items-start pl-10 pr-2 py-7" >
+                <img src='./image2.svg' width={700} height={700} />
+            </div>
+
+        </div>
+    )
+}
+
+export default Hero
