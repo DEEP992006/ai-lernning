@@ -6,10 +6,10 @@ import Footer from './layout/Footer'
 
 const App = () => {
   return (
-    <div className='pt-16'>
+    <div className='pt-16 '>
       <Hero />
       <Features />
-      
+      <Footer />
     </div>
   )
 }
