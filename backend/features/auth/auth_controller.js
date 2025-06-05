@@ -9,7 +9,7 @@ export const signupcontroler = async (req, res) => {
   if (!email || !password) {
     return res.status(400).send("Both email and password are required.");
   }
-
+  
   try {
     // Register user + token
     const token = await signupservice(email, password);

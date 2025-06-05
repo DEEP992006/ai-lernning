@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Hero from './layout/Hero'
-import Features from './layout/Features'
+import Features from './Features/features/components/Features'
 import Footer from './layout/Footer'
-
 
 const App = () => {
   return (
