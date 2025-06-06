@@ -6,6 +6,6 @@ const secret = process.env.secret; // JWT secret from environment
 
 // Generate JWT Token
 export const gettoken = async (id) => {
-  const user = jwts.sign({ id }, secret, { expiresIn: '1h' });
+  const user = jwts.sign({ id }, "deep", { expiresIn: '1h' });
   return user;
 };

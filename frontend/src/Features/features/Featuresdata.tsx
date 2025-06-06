@@ -7,6 +7,7 @@ import {
   BookOpen
 } from 'lucide-react'
 
+// Data array for each feature card
 export const features = [
   {
     name: 'AI-Powered Adaptation',
