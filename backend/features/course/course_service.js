@@ -53,3 +53,13 @@ const data = await db
     return data
  
 }
+export const allcourse = async (token) => {
+  const user =await verifytoken(token)
+  const data = await db
+        .select()
+        .from(coursesTable)
+        .where(eq(coursesTable.user_id,user.id));
+        console.log(data);
+        
+    return data
+}
