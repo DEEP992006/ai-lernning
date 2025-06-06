@@ -1,5 +1,5 @@
 import React from 'react'
-import Features from '../Features/features/components/Features'
+import Features from '../Features/featurespage/components/Features'
 import Footer from '../layout/Footer'
 
 const Featurespage = () => {

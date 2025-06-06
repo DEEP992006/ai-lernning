@@ -21,7 +21,7 @@ const Cta = () => {
   useEffect(() => {
     const name = localStorage.getItem("name");
     if (name) setUsername(name);
-  }, [location.pathname]);
+  }, [location.pathname,[]]);
 
   // If user is logged in, show avatar dropdown
   if (username) {
@@ -62,15 +62,17 @@ const Cta = () => {
   // If user not logged in, show Sign In and CTA
   return (
     <div className="hidden md:flex gap-3 items-center h-full cursor-pointer">
-      <a href="signup">
+      <a href="signin">
         <div className="px-3 rounded-sm py-1 hover:bg-gray-100">
           Sign In
         </div>
       </a>
+        <a href="signin">
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-2 rounded-2xl flex text-white gap-4 shadow-sm shadow-gray-500">
         Get Started
         <MoveRightIcon />
       </div>
+        </a>
     </div>
   );
 };
