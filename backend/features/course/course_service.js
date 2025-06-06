@@ -1,7 +1,7 @@
 // Service to Handle Course Creation
 import { eq } from "drizzle-orm";
 import { db } from "../../config/dbconection.js";
-import GenerateCourse from "../../config/generate_course.js";
+import GenerateCourse from "./generate_course.js";
 import { verifytoken } from "../../utils/jwt.js";
 import { coursesTable } from "./course_schema.js";
 
