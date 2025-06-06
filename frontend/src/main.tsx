@@ -14,9 +14,11 @@ import Signin from './pages/auth/Signin.tsx'
 import { Toaster } from 'sonner' // shadcn/ui toaster
 import Profile from './pages/auth/Profile.tsx'
 import Dashboard from './pages/Dashboard.tsx'
-import Features from './Features/features/components/Features.tsx'
+import Features from './Features/featurespage/components/Features.tsx'
 import Featurespage from './pages/Featurespage.tsx'
 import Aboutus from './pages/Aboutus.tsx'
+import Course from './Features/course/Course.tsx'
+import New from './Features/course/New.tsx'
 
 // query client
 const queryClient = new QueryClient()
@@ -37,7 +39,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/profile" element={<Profile />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/features" element={<Featurespage />} />
-              <Route path="/About us" element={<Aboutus />} />
+              <Route path="/About us/:id" element={<New />} />
               
               {/* Add other routes here */}
             </Routes>

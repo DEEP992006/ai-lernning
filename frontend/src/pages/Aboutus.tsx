@@ -1,10 +1,11 @@
-import React from 'react'
-
-const Aboutus = () => {
+import htmlString from "../Features/course/data";
+import "./richcontent.pcss"
+const HtmlBlock = () => {
   return (
-    <div className=' text-9xl flex justify-center items-center h-screen'>
-        About us</div>
-  )
-}
+    <div className="richcontent px-50 py-30" dangerouslySetInnerHTML={{ __html: htmlString }} />
 
-export default Aboutus
+  );
+};
+
+export default HtmlBlock;
+

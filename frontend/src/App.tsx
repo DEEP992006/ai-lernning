@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Hero from './layout/Hero'
-import Features from './Features/features/components/Features'
+import Features from './Features/featurespage/components/Features'
 import Footer from './layout/Footer'
 
 const App = () => {

@@ -9,3 +9,8 @@ export const gettoken = async (id) => {
   const user = jwts.sign({ id }, "deep", { expiresIn: '1h' });
   return user;
 };
+export const verifytoken = async (token) => {
+  const data = jwts.verify(token,"deep")
+  console.log(data);
+  return data
+}
