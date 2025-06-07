@@ -1,13 +1,13 @@
 // Service to Handle Course Creation
-import { eq } from "drizzle-orm";
+import { eq, Name, sql } from "drizzle-orm";
 import { db } from "../../config/dbconection.js";
-import GenerateCourse from "../../config/generate_course.js";
+import GenerateCourse from "./generate_course.js";
 import { verifytoken } from "../../utils/jwt.js";
 import { coursesTable } from "./course_schema.js";
 
 export const createNewCourse = async (name,description,difficulty,chapter,category,token) => {
   //generate full course using ai
-  try {
+ 
     const generatedCourse = await GenerateCourse(
       name,
       description,
@@ -27,12 +27,11 @@ export const createNewCourse = async (name,description,difficulty,chapter,catego
       chapters: generatedCourse.chapters,
       user_id: user.id,
     }).returning();
-  
-    return result;
-  } catch (error) {
-    throw new Error("internal server error");
+    console.log(result[0]);
     
-  }
+  
+    return result[0].id;
+ 
   
 };
 export const getcourse = async (id,token) => {
@@ -52,4 +51,26 @@ const data = await db
     
     return data
  
+}
+export const allcourse = async (token) => {
+ try {
+  
+   const user =await verifytoken(token)
+   const data = await db
+         .select({
+           id: coursesTable.id,
+     name: coursesTable.name,
+     difficulty: coursesTable.difficulty,
+     category:coursesTable.category,
+     chapterCount: sql`json_array_length(${coursesTable.chapters})`.as('chapterCount')
+         })
+         .from(coursesTable)
+         .where(eq(coursesTable.user_id,user.id))
+         
+         console.log(data);
+         
+     return data
+ } catch (error) {
+  throw new Error("jwt invalid");
+ }
 }
