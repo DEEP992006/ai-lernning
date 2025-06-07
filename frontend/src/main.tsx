@@ -17,8 +17,10 @@ import Dashboard from './pages/Dashboard.tsx'
 import Features from './Features/featurespage/components/Features.tsx'
 import Featurespage from './pages/Featurespage.tsx'
 import Aboutus from './pages/Aboutus.tsx'
-import Course from './Features/course/Course.tsx'
-import New from './Features/course/New.tsx'
+import Course from './Features/signlecourse/api/components/Course.tsx'
+import Newcourses from './pages/course/newcourse.tsx'
+import Allcourses from './pages/course/All_course.tsx'
+import Signle_course from './Features/signlecourse/api/components/Signle_course.tsx'
 
 // query client
 const queryClient = new QueryClient()
@@ -39,7 +41,9 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/profile" element={<Profile />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/features" element={<Featurespage />} />
-              <Route path="/About us/:id" element={<New />} />
+              <Route path="/course" element={<Allcourses />} />
+              <Route path="/course/new" element={<Newcourses />} />
+              <Route path="/course/:id/:chapterid" element={<Signle_course />} />
               
               {/* Add other routes here */}
             </Routes>

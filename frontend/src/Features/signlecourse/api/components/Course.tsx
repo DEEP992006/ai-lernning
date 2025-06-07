@@ -1,7 +1,7 @@
 // Course.jsx
 import React from 'react';
-import Coursedetails from './data';
-import Heading from '../../pages/Heading';
+
+import Heading from './Heading';
 import Paragraph from './Paragraph';
 import Code from './Code';
 import List from './List';

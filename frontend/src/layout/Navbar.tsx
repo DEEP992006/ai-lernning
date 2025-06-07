@@ -6,7 +6,7 @@ import Heading from "../Features/Navbar/components/Heading";
 // Top navigation bar
 const Navbar = () => {
   return (
-    <nav className="fixed w-full h-18 flex items-center justify-between py-5 px-12 shadow-sm">
+    <nav className="fixed w-full h-18 flex items-center justify-between py-5 px-12 shadow-sm z-50">
       {/* Logo and brand */}
       <Heading />
 

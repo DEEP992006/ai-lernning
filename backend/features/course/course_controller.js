@@ -16,7 +16,7 @@ export const newCourseController = async (req, res) => {
   }
   //send data to sevice file
   try {
-    const newCourse = await createNewCourse(
+    const newCourseid = await createNewCourse(
       name,
       description,
       difficulty,
@@ -25,7 +25,7 @@ export const newCourseController = async (req, res) => {
       token
     );
     //retuening response
-    res.json({ new: newCourse });
+    res.json({ "id": newCourseid });
   } catch (error) {
     //if any error send this
     res.status(400).json({ "message": error.message })
@@ -44,7 +44,12 @@ export const viewcoursecontroller = async (req, res) => {
 
 }
 export const allcoursescontroller = async (req, res) => {
-  const { token } = req.body
-  const course = await allcourse(token)
-  res.status(400).json({course})
+  try {
+    const { token } = req.body
+    const course = await allcourse(token)
+    res.status(200).json({course})
+    
+  } catch (error) {
+   res.status(400).json({"message":error.message})
+  }
 }
